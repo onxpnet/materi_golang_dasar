@@ -48,6 +48,9 @@ func main() {
 		}
 	}
 
-	person := map[string]interface{}{"name": "hans", "age": 100}
+	person := map[string]interface{}{
+		"name": "hans",
+		"age":  100,
+	}
 	fmt.Println(person["name"], person["age"])
 }
