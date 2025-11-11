@@ -12,8 +12,12 @@ type SensorData struct {
 	Timestamp time.Time
 }
 
-func (s *SensorData) UpdateValue(newValue float64) {
+func (s SensorData) UpdateValue(newValue float64) {
 	s.Value = newValue // Memodifikasi data asli
+}
+
+func (s SensorData) UpdateLokasi(newLokasi string) {
+	s.Lokasi = newLokasi
 }
 
 func main() {
@@ -29,6 +33,11 @@ func main() {
 	}
 
 	sensor.UpdateValue(1.1)
+	sensor.UpdateLokasi("Jepang")
 
 	fmt.Println(sensor)
+
+	var pemasukan string
+	fmt.Scanln(&pemasukan)
+	fmt.Println("input data ", pemasukan, "telah di simpan")
 }
